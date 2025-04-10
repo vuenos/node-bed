@@ -1,0 +1,11 @@
+import { Request, Response, NextFunction } from 'express';
+
+export const errorHandler = (
+  err: any,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  console.error(err.stack);
+  res.status(500).json({ message: '서버 내부 오류가 발생했습니다.' });
+};
