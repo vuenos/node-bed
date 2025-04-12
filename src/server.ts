@@ -5,7 +5,9 @@ import winston from 'winston';
 import familyRoutes from './routes/familyRoutes.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { connectDB } from './config/db.js';
+import { inject } from "@vercel/analytics"
 dotenv.config();
+inject();
 
 const app = express();
 const PORT = process.env.PORT || 5500;
