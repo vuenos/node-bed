@@ -12,6 +12,7 @@ export interface IFamilyMember {
     | '딸'
     | '형제/자매'
     | '기타';
+  gender: string;
   phoneNumber?: string;
   birthdate?: string;
   address?: string;
