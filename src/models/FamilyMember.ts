@@ -11,7 +11,7 @@ export interface IFamilyMember {
     | '아들'
     | '딸'
     | '형제/자매'
-    | '기타';
+    | '본인';
   gender: string;
   phoneNumber?: string;
   birthdate?: string;
@@ -44,7 +44,7 @@ const FamilyMemberSchema: Schema = new Schema<IFamilyMemberDocument>({
       '아들',
       '딸',
       '형제/자매',
-      '기타',
+      '본인',
     ],
   },
   phoneNumber: {
