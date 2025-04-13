@@ -60,20 +60,12 @@ const FamilyMemberSchema: Schema = new Schema<IFamilyMemberDocument>({
   note: {
     type: String,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, { timestamps: true });
 
 // Automatically updates updatedAt when modified
-FamilyMemberSchema.pre('findOneAndUpdate', function () {
-  this.set({updatedAt: new Date()});
-});
+// FamilyMemberSchema.pre('findOneAndUpdate', function () {
+//   this.set({updatedAt: new Date()});
+// });
 
 const FamilyMember = mongoose.model('FamilyMember', FamilyMemberSchema);
 export default FamilyMember;
